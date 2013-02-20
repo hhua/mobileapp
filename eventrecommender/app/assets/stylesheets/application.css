@@ -10,4 +10,10 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.mobile-1.2.0.min
  */
+
+.friends_icon{
+	border-radius: 3px;
+	margin-bottom: 15px;
+}

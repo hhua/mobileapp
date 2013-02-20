@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require jquery-1.9.1.min
+//= require jquery-migrate-1.1.1.min
+//= require jquery.mobile-1.2.0.min
 //= require_tree .

@@ -1,29 +1,31 @@
-<h1>Listing events</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Date</th>
-    <th>Location</th>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.date %></td>
-    <td><%= event.location %></td>
-    <td><%= event.url %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
+<div data-role="page">
+  <div data-role="header">
+    <a href="#" data-icon="home">Home</a>
+    <h4>Eventlist</h4>
+    <a href="index.html" data-icon="gear" class="ui-btn-right">Filter</a>
+  </div>
+  <% @events.each do |event| %>
+    <div data-role="content">
+      <input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+      <ul data-role="listview">
+        <li>
+          <%= link_to event.name, event %>
+          <p><%= event.location %></p>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 <br />
+
+  <div data-role="footer">
+    <div data-role="navbar">
+    <ul>
+      <li><a href="#">Find friends</a></li>
+      <li><a href="#">My friends</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+    </div><!-- /navbar -->
+  </div>
+</div>
 
 <%= link_to 'New Event', new_event_path %>
