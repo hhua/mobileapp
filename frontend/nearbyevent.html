@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nearbyevent | Eventify</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/style.css"> 
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+	<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo-20gBajHajJLF_YWUzPe8Sow0Ubqaj8&sensor=false">
+    </script>
+    <script type="text/javascript">
+		var cur_latitude;
+		var cur_longitude;
+
+      	function initialize() {
+
+		// Check for geolocation support
+		if (navigator.geolocation) {
+			// Use method getCurrentPosition to get coordinates
+			navigator.geolocation
+					.getCurrentPosition(function show_map(position) {
+							cur_latitude = position.coords.latitude;
+							cur_longitude = position.coords.longitude;
+
+						// let's show a map or do something interesting!
+						map.setCenter(new google.maps.LatLng(cur_latitude,
+							cur_longitude));
+
+						var marker = new google.maps.Marker({
+				position : new google.maps.LatLng(cur_latitude,
+						cur_longitude),
+				map : map
+			});
+
+					});
+		}
+
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+      }
+    </script>
+
+</head>
+<body onload="initialize()">
+	
+<div data-role="page"> 
+	<div data-role="header">
+		<a href="#" data-icon="home">Events</a>
+		<h4>Nearby Events</h4>
+		<a href="#" data-icon="gear" class="ui-btn-right">Filter</a>
+	</div> 
+	<div data-role="content">
+		<div id="map_canvas" style="margin: 0; width:100%; height:300px"></div>
+	</div>
+</div> 
+
+</body>
+</html>

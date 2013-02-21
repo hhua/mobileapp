@@ -44,3 +44,11 @@
 	background-color: #90B44B;
 	font-weight: bold;
 }
+
+
+/*
+* Definition of new icons
+*/
+.ui-icon-nearby {
+	background-image: url("img/png/glyphicons_417_rss.png");
+}
