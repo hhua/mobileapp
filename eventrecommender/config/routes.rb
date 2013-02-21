@@ -1,15 +1,11 @@
 Eventrecommender::Application.routes.draw do
   resources :interests
 
-  resources :event_interests
-
-  resources :user_interests
-
   resources :events
 
-  resources :attendees
-
   resources :users
+
+  root :to => "events#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

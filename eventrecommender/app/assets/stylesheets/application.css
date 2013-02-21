@@ -10,4 +10,30 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.mobile-1.2.0.min
  */
+
+.friends_icon{
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
+
+#event-list{
+	margin-top: 10px;
+}
+
+#footer{
+	position: static;
+	left: 0px;
+	top: 300px;
+}
+
+.ui-link-inherit:hover {
+	border: 1px solid #bbb;
+	background: #dfdfdf;
+	background-image: -webkit-linear-gradient( #f6f6f6,#e0e0e0 );
+	background-image: -moz-linear-gradient( #f6f6f6,#e0e0e0 );
+	background-image: -ms-linear-gradient( #f6f6f6,#e0e0e0 );
+	background-image: -o-linear-gradient( #f6f6f6,#e0e0e0 );
+	background-image: linear-gradient( #f6f6f6,#e0e0e0 );
+}
