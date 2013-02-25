@@ -2,62 +2,131 @@
 <head>
 	<title>Eventdetail | Eventify</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
+	<link rel="stylesheet" href="http://jquerymobile.com/branches/popup-widget/css/themes/default/jquery.mobile.css"/>
 	<link rel="stylesheet" href="css/style.css">
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script src="http://jquerymobile.com/branches/popup-widget/js/jquery.js"></script>
+	<script src="http://jquerymobile.com/branches/popup-widget/js/"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#back").click(function () {
+				document.location.href = "eventlist.html";
+			});
+			$("input[name=radio-choice-1]:radio").bind("change", function() {
+				$("#going_popup").popup("close");
+			});
+		});
+	</script>
 </head>
 <body>
 <div data-role="page">
 	<div data-role="header">
-		<a href="#" data-icon="arrow-l">Back</a>
+		<a href="#" data-icon="arrow-l" id="back">Back</a>
 		<h4>Eventify</h4>
 		<a href="#" data-icon="star" class="ui-btn-right">Share</a>
 	</div>
 	<div data-role="content">
 		<div id="event-brief" class="event-detail">
 			<h3>Encoding Architecture 2013</h3>
-			<p>Sat. Feb 12, 2013 9:30AM - 3:30PM</p>
-			<p>Carnegie Mellon University</p>
-			<p>Porter Hall</p>
+			<p>
+				<strong>Date:</strong> Sat. Feb 12, 2013 9:30AM - 3:30PM
+				</br>
+				<strong>Location:</strong> Carnegie Mellon University - Porter Hall
+				</br>
+				<strong>Price:</strong> Free
+				</br>
+				<strong>URL:</strong> <a href="http://www.eventbrite.com/event/4853297343?ref=ebtn">http://www.eventbrite.com/event/4853297343?ref=ebtn</a>
+			</p>
 		</div>
 		<div id="description" class="event-detail">
-			<a href="#">
-				<p>Description</p>
-				<hr>
-				<p>
-					Summit Overview The Seventh Annual Panther Leadership Summit is hosted by the ...
-				</p>
-			</a>
+			<p>
+				<strong>Overview:</strong> With two decades of progressive public policy, Pittsburgh has become a modes of Rust-Belt reinvention. Today the Steel City is a metropolitan destination for companies centered around clean technology, sustainability, medicine, education, and culture. The overabundance of technical and creative talent is enabling Pittsburgh to incubate start-ups that innovate at the intersection of art and technology. For more on the city of Pittsburgh, visit here.
+			</p>
 		</div>
-		<a id="register" href="index.html" data-role="button" data-mini="true">Register!</a>
-		<div>
-			<h3>Attendee List: </h3>
+		<h3>Attendee List: </h3>
+		<div id="friend_container">
+			<table>
+				<tr class="friend_list">
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend1.jpg"></div>
+						Susan Smith
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend0.jpg"></div>
+						Mary Ruiz
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend3.jpg"></div>
+						Renard Simona
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend4.jpg"></div>
+						Donald Matsuda
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend5.jpg"></div>
+						Don Barnes
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend0.jpg"></div>
+						Hector Chamberlain
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend2.jpg"></div>
+						Roy Hein
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend0.jpg"></div>
+						James Wallace
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend4.jpg"></div>
+						Alfred Fleming
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend5.jpg"></div>
+						Douglas Carter
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend0.jpg"></div>
+						Jason Jarvis
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend2.jpg"></div>
+						Harold Klup
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend0.jpg"></div>
+						Amanda Blair
+					</td>
+					<td class="friend">
+						<div class="img_container"><img class="friends_icon" src="img/friend0.jpg"></div>
+						Citlali Jowita
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div class="ui-grid-b">
-			<div class="ui-block-a">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
+		<div id="footer" data-role="footer">
+			<a href="#going_popup" id="going_button" data-rel="popup">Going?</a>
+			<div id="going_popup" data-role="popup" data-theme="a" data-overlay-theme="a" class="ui-content">
+				<div data-role="fieldcontain">
+			    <fieldset data-role="controlgroup">
+						<legend>RSVP for this event:</legend>
+							<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1"/>
+							<label for="radio-choice-1">Yes!</label>
+
+							<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"/>
+							<label for="radio-choice-2">No</label>
+
+							<input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"/>
+							<label for="radio-choice-3">Maybe...</label>
+					</fieldset>
+				</div>
 			</div>
-			<div class="ui-block-b">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-			</div>
-			<div class="ui-block-c">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-				<img class="friends_icon" src="http://placehold.it/75">
-			</div>
-		</div><!-- /grid-b -->
+		</div>
 	</div>
 </div>
 </body>
