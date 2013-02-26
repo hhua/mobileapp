@@ -1,0 +1,90 @@
+<html>
+<head>
+	<title>Eventify</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#eventlist").click(function () {
+				document.location.href = "eventlist.html";
+			});
+			$("#myevents").click(function () {
+				document.location.href = "myevents.html";
+			});
+			$("#new").submit(function () {
+				var newli = $("<li></li>");
+				newli.html($("#query").val());
+				console.log(newli);
+				$("#add_filter").before(newli)
+			})
+		});
+	</script>
+</head>
+<body>
+
+<div data-role="page">
+	<div data-role="header">
+		<img src="img/Eventify PNG.png">
+	</div>
+
+	<div data-role="content">
+		<h3>Privacy settings</h3>
+		<div class="container">
+			<form>
+				<div data-role="fieldcontain">
+					<div class="setting_option">
+						<label for="flip-7">Facebook connection:</label>
+						<select name="flip-7" id="flip-7" data-role="slider" data-mini="true">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+						</select>
+					</div>
+
+					<div class="setting_option">
+						<label for="flip-7">Public My Events page:</label>
+						<select name="flip-7" id="flip-7" data-role="slider" data-mini="true">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+		<h3>Recommendation settings</h3>
+		<div class="container">
+			<ul id="settings_filter">
+				<li id="add_filter">
+					<a href="#add_popup" id="add_button" data-rel="popup" data-position-to="window">+ Add a default search</a>
+					<div id="add_popup" data-role="popup" data-theme="a" data-overlay-theme="a" class="ui-content">
+						<div data-role="fieldcontain">
+							<form id="new">
+								<label for="query">Search query:</label>
+								<input type="text" name="query" id="query" value="" placeholder="ie: concerts, Bob Dylan, Pittsburgh"/>
+								</br>
+								<input type="submit" value="Add"/>
+							</form>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="footer" data-role="footer">
+		<div data-role="navbar">
+		<ul>
+			<li><a href="#" id="eventlist">Find Events</a></li>
+			<li><a href="#" id="myevents">My Events</a></li>
+			<li><a href="#" class="ui-btn-active">Settings</a></li>
+		</ul>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
