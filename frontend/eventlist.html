@@ -15,7 +15,7 @@
   
   function listFilter(header, list) {
     var form = $("<form>").attr({"class":"filterform","action":"#"}),
-        input = $("<input>").attr({"id":"search-basic","type":"search"});
+        input = $("<input>").attr({"class":"filterinput","type":"text"});
     $(form).append(input).appendTo(header);
  
     $(input)
@@ -47,72 +47,72 @@
 	
 <div data-role="page"> 
 	<div id="header" data-role="header">
-		<a href="#" data-icon="grid">Map</a>
+		<a href="nearbyevent.html" data-icon="grid">Map</a>
 		<h4>Eventlist</h4>
 		<a href="index.html" data-icon="gear" class="ui-btn-right">Filter</a>
 	</div> 
 	<div id="list" data-role="content">
 		<ul id="event-list" data-role="listview">
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/alumni_networking.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">CMU Alumni Networking</h3>
 					<p class="ui-li-desc">UC Mcconomy Hall</p>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/music_show.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">Music Show</h3>
 					<p class="ui-li-desc">Carnegie Music Hall</p>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/entrepreneur_workshop.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">Entrepreneur Workshop</h3>
 					<p class="ui-li-desc">Univeristy of Pittsburgh</p>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/cmu_summit.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">CMU SUMMIT</h3>
 					<p class="ui-li-desc">UC Mcconomy Hall</p>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/pittsburgh_mobile.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">Pittsburgh Mobile Conference</h3>
 					<p class="ui-li-desc">UC Mcconomy Hall</p>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/facebook_hackathon.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">Facebook Hackathon</h3>
 					<p class="ui-li-desc">GHC 4301</p>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/social_network.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">Lecture on Social Network</h3>
 					<p class="ui-li-desc">UC Mcconomy Hall</p>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="ui-link-inherit">
+				<a href="eventdetail.html" class="ui-link-inherit">
 				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
+					<img src="img/event_small/google_techtalk.png" class="ui-li-thumb">
 					<h3 class="ui-li-heading">Google Tech Talk</h3>
 					<p class="ui-li-desc">UC Mcconomy Hall</p>
 				</a>

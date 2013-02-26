@@ -14,7 +14,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo-20gBajHajJLF_YWUzPe8Sow0Ubqaj8&sensor=false">
     </script>
     <script type="text/javascript">
-    	var locations = [["Les Miserables", "40.45", "-79.8", "Theatre Square", "https://google.com"],["Elvis Elvis", "40.44", "-80", "Benedum center", "http://www.pittsburgh-theater.com/theaters/heinz-hall/elvis-lives.php"],["Priscilla", "40.436", "-79.88", "Benedum Center, Liberty Ave, Pittsburgh, PA", "http://www.pittsburgh-theater.com/theaters/benedum-center/priscilla-queen-of-the-desert.php"]];
+    	var locations = [["Les Miserables", "40.45", "-79.8", "Theatre Square", "eventdetail.html"],["Elvis Elvis", "40.44", "-80", "Benedum center", "eventdetail.html"],["Priscilla", "40.436", "-79.88", "Benedum Center, Liberty Ave, Pittsburgh, PA", "eventdetail.html"]];
 
 		var contentStrings = [];
 
@@ -36,11 +36,11 @@
 						map.setCenter(new google.maps.LatLng(cur_latitude,
 							cur_longitude));
 
-						var marker = new google.maps.Marker({
-						position : new google.maps.LatLng(cur_latitude,
-						cur_longitude),
-						map : map
-						});
+						// var marker = new google.maps.Marker({
+						// position : new google.maps.LatLng(cur_latitude,
+						// cur_longitude),
+						// map : map
+						// });
 
 			});
 		}
