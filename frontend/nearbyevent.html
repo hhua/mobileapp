@@ -14,11 +14,15 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo-20gBajHajJLF_YWUzPe8Sow0Ubqaj8&sensor=false">
     </script>
     <script type="text/javascript">
+    	var locations = [["Les Miserables", "40.45", "-79.8", "Theatre Square", "https://google.com"],["Elvis Elvis", "40.44", "-80", "Benedum center", "http://www.pittsburgh-theater.com/theaters/heinz-hall/elvis-lives.php"],["Priscilla", "40.436", "-79.88", "Benedum Center, Liberty Ave, Pittsburgh, PA", "http://www.pittsburgh-theater.com/theaters/benedum-center/priscilla-queen-of-the-desert.php"]];
+
+		var contentStrings = [];
+
 		var cur_latitude = -34.397;
 		var cur_longitude = 150.644;
 
       	function initialize() {
-      	detectBrowser();
+      		detectBrowser();
 
 		// Check for geolocation support
 		if (navigator.geolocation) {
@@ -33,21 +37,51 @@
 							cur_longitude));
 
 						var marker = new google.maps.Marker({
-				position : new google.maps.LatLng(cur_latitude,
+						position : new google.maps.LatLng(cur_latitude,
 						cur_longitude),
-				map : map
-			});
+						map : map
+						});
 
-					});
+			});
 		}
 
         var mapOptions = {
           center: new google.maps.LatLng(cur_latitude, cur_longitude),
-          zoom: 14,
+          zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
+
+
+		var infowindow = new google.maps.InfoWindow();
+
+		var i;
+
+		for (i = 0; i < locations.length; i++) {
+			var marker = new google.maps.Marker({
+				position : new google.maps.LatLng(locations[i][1],
+						locations[i][2]),
+				map : map
+			});
+			
+			
+			var contentString = '<div class="row-fluid" ><div class="span12" style="text-align: left;"><h4 class="text-left">' + locations[i][0]
+			+ '</h4><p class="text-left">' + locations[i][3]
+			+ '</p><p class="text-left"><a href="' + locations[i][4] + '">Homepage</a></p></div></div>';
+
+			contentStrings[i] = contentString;
+			
+			google.maps.event.addListener(marker, 'click',
+					(function(marker, i) {
+						return function() {
+							//console.log(contentStrings[i]);
+							infowindow.setContent(contentStrings[i]);
+							infowindow.open(map, marker);
+						};
+					})(marker, i));
+		} 
       }
 
       function detectBrowser(){
