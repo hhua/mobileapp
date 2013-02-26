@@ -1,45 +1,11 @@
 <html>
 <head>
-	<title>Eventlist | Eventify</title> 
+	<title>MyList | Eventify</title> 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 	<link rel="stylesheet" href="css/style.css"> 
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script> 
- 
-(function ($) {
-  jQuery.expr[':'].Contains = function(a,i,m){
-      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-  };
-  
-  function listFilter(header, list) {
-    var form = $("<form>").attr({"class":"filterform","action":"#"}),
-        input = $("<input>").attr({"id":"search-basic","type":"search"});
-    $(form).append(input).appendTo(header);
- 
-    $(input)
-      .change( function () {
-        var filter = $(this).val();
-        if(filter) {
-          $(list).find("h3:not(:Contains(" + filter + "))").parent().parent().slideUp();
-          $(list).find("h3:Contains(" + filter + ")").parent().parent().slideDown();
-        } else {
-          $(list).find("li").slideDown();
-        }
-        return false;
-      })
-    .keyup( function () {
-        $(this).change();
-    });
-  }
- 
-  $(function () {
-    listFilter($("#header"), $("#list"));
-  });
-}(jQuery));
- 
-  </script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 </head>
@@ -48,7 +14,7 @@
 <div data-role="page"> 
 	<div id="header" data-role="header">
 		<a href="#" data-icon="grid">Map</a>
-		<h4>Eventlist</h4>
+		<h4>My List</h4>
 		<a href="index.html" data-icon="gear" class="ui-btn-right">Filter</a>
 	</div> 
 	<div id="list" data-role="content">
@@ -59,14 +25,6 @@
 					<img src="http://placehold.it/80" class="ui-li-thumb">
 					<h3 class="ui-li-heading">CMU Alumni Networking</h3>
 					<p class="ui-li-desc">UC Mcconomy Hall</p>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="ui-link-inherit">
-				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
-					<h3 class="ui-li-heading">Music Show</h3>
-					<p class="ui-li-desc">Carnegie Music Hall</p>
 				</a>
 			</li>
 			<li>
@@ -97,23 +55,7 @@
 				<a href="#" class="ui-link-inherit">
 				
 					<img src="http://placehold.it/80" class="ui-li-thumb">
-					<h3 class="ui-li-heading">Facebook Hackathon</h3>
-					<p class="ui-li-desc">GHC 4301</p>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="ui-link-inherit">
-				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
 					<h3 class="ui-li-heading">Lecture on Social Network</h3>
-					<p class="ui-li-desc">UC Mcconomy Hall</p>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="ui-link-inherit">
-				
-					<img src="http://placehold.it/80" class="ui-li-thumb">
-					<h3 class="ui-li-heading">Google Tech Talk</h3>
 					<p class="ui-li-desc">UC Mcconomy Hall</p>
 				</a>
 			</li>
