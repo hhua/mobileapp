@@ -18,12 +18,17 @@
 			});
 			$("#new").submit(function () {
 				var newli = $("<li></li>");
+				var delButton = $("<img class='delete' src='img/png/glyphicons_016_bin.png' />");
 				newli.html($("#query").val());
+				newli.append(delButton);
 				console.log(newli);
 				$("#add_filter").before(newli);
 				$("#add_popup").popup("close");
 				return false;
 			})
+			$(".delete").click(function () {
+				this.parent().remove();
+			});
 		});
 	</script>
 </head>
