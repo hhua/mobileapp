@@ -20,7 +20,9 @@
 				var newli = $("<li></li>");
 				newli.html($("#query").val());
 				console.log(newli);
-				$("#add_filter").before(newli)
+				$("#add_filter").before(newli);
+				$("#add_popup").popup("close");
+				return false;
 			})
 		});
 	</script>
@@ -61,10 +63,10 @@
 				<li id="add_filter">
 					<a href="#add_popup" id="add_button" data-rel="popup" data-position-to="window">+ Add a default search</a>
 					<div id="add_popup" data-role="popup" data-theme="a" data-overlay-theme="a" class="ui-content">
-						<div data-role="fieldcontain">
+						<div data-role="fieldcontain" data-overlay-theme="a">
 							<form id="new">
-								<label for="query">Search query:</label>
-								<input type="text" name="query" id="query" value="" placeholder="eg: concerts, Bob Dylan, Pittsburgh"/>
+								<label for="query">Default search terms for better recommendations:</label>
+								<input type="text" name="query" id="query" value="" placeholder="eg: music, Carnegie Hall, Pittsburgh, theater"/>
 								</br>
 								<input type="submit" value="Add"/>
 							</form>
