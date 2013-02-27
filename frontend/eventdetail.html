@@ -5,6 +5,14 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
 	<link rel="stylesheet" href="http://jquerymobile.com/branches/popup-widget/css/themes/default/jquery.mobile.css"/>
 	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		.ui-icon-directions {
+			background-image: url("img/png/glyphicons_340_globe.png");
+		}
+		p a.ui-btn {
+			margin: 0px 0px 0px 20px;
+		}
+	</style>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
@@ -36,7 +44,7 @@
 				<strong>Date:</strong> Sat. Feb 12, 2013 9:30AM - 3:30PM
 				</br>
 				<strong>Location:</strong> Carnegie Mellon University - Porter Hall
-				<a href="nearbyevent.html">Directions</a>
+				<a href="nearbyevent.html" data-role="button" data-icon="directions" data-mini="true" data-inline="true">Directions</a>
 				</br>
 				<strong>Price:</strong> Free
 				</br>
