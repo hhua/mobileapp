@@ -13,6 +13,12 @@
 	height: 30px;
 }
 
+.detail_img {
+	display: inline-block;
+	float: left;
+	padding-right: 15px;
+}
+
 .ui-content {
 	margin: 35px 0px;
 }
@@ -44,9 +50,10 @@
 }
 
 #friend_container {
+	height: 105px;
 	width: 100%;
-	overflow-y: hidden;
 	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
 .friend_list {
@@ -152,7 +159,7 @@ fieldset.ui-corner-all.ui-controlgroup.ui-controlgroup-vertical .ui-controlgroup
 }
 
 .attending{
-	
+
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 	font-weight: bold;
