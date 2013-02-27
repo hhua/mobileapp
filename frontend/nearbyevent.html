@@ -14,7 +14,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo-20gBajHajJLF_YWUzPe8Sow0Ubqaj8&sensor=false">
     </script>
     <script type="text/javascript">
-    	var locations = [["CMU Alumni Networking", "40.45", "-79.8", "UC Mcconomy Hall", "eventdetail.html"],["Music Show", "40.44", "-80", "Carnegie Music Hall", "eventdetail.html"],["Entrepreneur Workshop", "40.436", "-79.88", "University of Pittsburgh", "eventdetail.html"], ["CMU Summit", "40.46", "-79.9", "UC Mcconomy Hall", "eventdetail.html"]];
+    	var locations = [["CMU Alumni Networking", "40.45", "-79.8", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/alumni_networking.png"],["Music Show", "40.44", "-80", "Carnegie Music Hall", "eventdetail.html", "img/event_small/music_show.png"],["Entrepreneur Workshop", "40.436", "-79.88", "University of Pittsburgh", "eventdetail.html", "img/event_small/entrepreneur_workshop.png"], ["CMU Summit", "40.46", "-79.9", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/cmu_summit.png"], ["Pittsburgh Mobile Conference", "40.455", "-79.95", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/pittsburgh_mobile.png"], ["Facebook Hackathon", "40.44", "-79.85", "GHC 4301", "eventdetail.html", "img/event_small/facebook_hackathon.png"], ["Lecture on Social Network", "40.42", "-79.9", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/social_network.png"], ["Google Tech Talk", "40.43", "-79.96", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/google_techtalk.png"]];
 
 		var contentStrings = [];
 
@@ -67,9 +67,9 @@
 			});
 			
 			
-			var contentString = '<div class="row-fluid" ><div class="span12" style="text-align: left;"><h4 class="text-left">' + locations[i][0]
-			+ '</h4><p class="text-left">' + locations[i][3]
-			+ '</p><p class="text-left"><a href="' + locations[i][4] + '">Homepage</a></p></div></div>';
+			var contentString = '<div style="width: 320px; height: 120px;"><img src="' + locations[i][5] + '" /><div style="text-align: left;float: right;"><a href="' + locations[i][4] + '"><h4 class="text-left">' + locations[i][0]
+			+ '</h4></a><p class="text-left">' + locations[i][3]
+			+ '</p></div></div>';
 
 			contentStrings[i] = contentString;
 			
