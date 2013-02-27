@@ -1,10 +1,10 @@
 <html>
 <head>
-	<title>Filter | Eventify</title> 
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Filter | Eventify</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-	<link rel="stylesheet" href="css/style.css"> 
+	<link rel="stylesheet" href="css/style.css">
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
@@ -14,8 +14,8 @@
 		<span class="ui-icon ui-icon-loading"></span>
 		<h1>loading</h1>
 	</div>
-	<div data-role="dialog" data-url="#" data-external-page="true" tabindex="0" class="ui-page ui-body-c ui-dialog ui-overlay-a ui-page-active" style="min-height: 716px;"><div role="dialog" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
-	
+	<div data-role="dialog" data-url="#" data-external-page="true" tabindex="0" class="ui-page ui-body-c ui-dialog ui-overlay-a ui-page-active" style="min-height: 716px;">
+
 		<div data-role="header" data-theme="d" class="ui-corner-top ui-header ui-bar-d" role="banner">
 			<h1 class="ui-title" role="heading" aria-level="1">Filter</h1>
 		</div>
@@ -30,27 +30,20 @@
 						<a href="index.html" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-corner-right ui-controlgroup-last"><span class="ui-btn-inner ui-corner-right ui-controlgroup-last"><span class="ui-btn-text">Date</span></span></a>
 					</div>
 				</div>
-				<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br"><label for="select-choice-1" class="select ui-select">Category</label><div class="ui-select"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" data-mini="true" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-icon-right ui-btn-up-c">
+				<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br"><label for="select-choice-1" class="select ui-select">Distance</label><div class="ui-select">
 				<select name="select-choice-1" id="select-choice-1" data-mini="true">
-					<option value="standard">Categories</option>
-					<option value="rush">Musical Events</option>
-					<option value="express">Hackathon</option>
-					<option value="overnight">Professional Events</option>
-				</select></div></div></div>
-				<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br"><label for="select-choice-1" class="select ui-select">Distance</label><div class="ui-select"><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" data-mini="true" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-icon-right ui-btn-up-c">
-				<select name="select-choice-1" id="select-choice-1" data-mini="true">
-					<option value="standard">5km</option>
-					<option value="rush">2km</option>
-					<option value="express">1km</option>
+					<option value="standard">> 5km</option>
+					<option value="rush">2km - 1km</option>
+					<option value="express">< 1km</option>
 					<option value="overnight">All</option>
-				</select></div></div></div>
+				</select></div></div>
 				<div role="heading" class="ui-controlgroup-label">Price</div>
 				<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br"><input type="number" data-type="range" name="slider" id="slider" value="50" min="0" max="100" data-highlight="true" data-mini="true" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-mini ui-slider-input"></div>
-				<a href="#" data-role="button" data-theme="a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text" data-mini="true">Save</span></span></a>
-			</form>     
 
-			<a href="#" data-role="button" data-rel="back" data-theme="c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text" data-mini="true">Cancel</span></span></a>    
-		</div>
+				<a href="eventlist.html" data-role="button" data-theme="a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text" data-mini="true">Save</span></span></a>
+			</form>
+
+			<a href="eventlist.html" data-role="button" data-rel="back" data-theme="c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text" data-mini="true">Cancel</span></span></a>
 		</div>
 	</div>
 
