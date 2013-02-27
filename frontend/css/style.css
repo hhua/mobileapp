@@ -150,3 +150,7 @@ fieldset.ui-corner-all.ui-controlgroup.ui-controlgroup-vertical .ui-controlgroup
 .ui-popup-container {
 	width: 80%;
 }
+
+.attending{
+	text-align: left;
+}
