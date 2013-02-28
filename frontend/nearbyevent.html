@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Nearbyevent | Eventify</title> 
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Nearbyevent | Eventify</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-	<link rel="stylesheet" href="css/style.css"> 
+	<link rel="stylesheet" href="css/style.css">
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
@@ -65,14 +65,14 @@
 						locations[i][2]),
 				map : map
 			});
-			
-			
+
+
 			var contentString = '<div style="width: 320px; height: 120px;"><img src="' + locations[i][5] + '" /><div style="text-align: left;float: right;"><a href="' + locations[i][4] + '"><h4 class="text-left">' + locations[i][0]
 			+ '</h4></a><p class="text-left">' + locations[i][3]
 			+ '</p></div></div>';
 
 			contentStrings[i] = contentString;
-			
+
 			google.maps.event.addListener(marker, 'click',
 					(function(marker, i) {
 						return function() {
@@ -81,7 +81,7 @@
 							infowindow.open(map, marker);
 						};
 					})(marker, i));
-		} 
+		}
       }
 
       function detectBrowser(){
@@ -100,13 +100,13 @@
 
 </head>
 <body onload="initialize()">
-	
-<div data-role="page"> 
+
+<div data-role="page">
 	<div data-role="header">
 		<a href="eventlist.html" data-icon="home">List</a>
 		<img src="img/Eventify PNG.png">
 		<a href="filter.html" data-icon="gear" class="ui-btn-right" data-rel="dialog">Filter</a>
-	</div> 
+	</div>
 	<div data-role="content">
 		<div id="map_canvas" style="margin: 0; width:100%; height:300px"></div>
 	</div>
@@ -119,7 +119,7 @@
 		</ul>
 		</div><!-- /navbar -->
 	</div>
-</div> 
+</div>
 
 </body>
 </html>

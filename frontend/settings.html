@@ -31,10 +31,10 @@
 				$("#add_filter").before(newli);
 				$("#add_popup").popup("close");
 				return false;
-			})
+			});
 			$(".delete").live("click", function() {
 				$(this).closest("li").remove();
-			})
+			});
 		});
 	</script>
 </head>
@@ -77,7 +77,7 @@
 						<div data-role="fieldcontain" data-overlay-theme="a">
 							<form id="new">
 								<label for="query">Default search terms for better recommendations:</label>
-								<input type="text" name="query" id="query" value="" placeholder="eg: music, Carnegie Hall, Pittsburgh, theater"/>
+								<input type="text" name="query" id="query" value="" placeholder="eg: music, Carnegie Hall, Pittsburgh, theater" autocomplete="off"/>
 								</br>
 								<input type="submit" value="Add"/>
 							</form>
