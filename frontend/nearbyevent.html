@@ -29,15 +29,13 @@
 						'position': new google.maps.LatLng(marker[1], marker[2]),
 						'bounds': true
 					}).click(function() {
-						var contentString = '<div style="width: 320px; height: 120px;"><img src="' + marker[5] + '" /><div style="text-align: left;float: right;"><a href="' + marker[4] + '"><h4 class="text-left">' + marker[0]
+						var contentString ='<div><img src="' + marker[5] + '" /><div id="mapdetail" style="float:right; text-align: left;"><a href="' + marker[4] + '"><h4 class="text-left">' + marker[0]
 							+ '</h4></a><p class="text-left">' + marker[3]
 							+ '</p></div></div>';
 						$('#map_canvas').gmap('openInfoWindow', { 'content': contentString }, this);
 					});
 				});
 			});
-			$('#map_canvas').style.width = '100%';
-			$('#map_canvas').style.height = '100%';
 		});
 
   	// function initialize() {

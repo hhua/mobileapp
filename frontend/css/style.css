@@ -50,7 +50,6 @@
 }
 
 #friend_container {
-	height: 105px;
 	width: 100%;
 	overflow-x: scroll;
 	overflow-y: hidden;
