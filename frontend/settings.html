@@ -32,6 +32,10 @@
 				$("#add_popup").popup("close");
 				return false;
 			});
+			$("#add_button").click(function() {
+				$("#query").val('');
+				$("#query").focus();
+			});
 			$(".delete").live("click", function() {
 				$(this).closest("li").remove();
 			});
