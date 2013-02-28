@@ -3,103 +3,111 @@
 <head>
 	<title>Nearbyevent | Eventify</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
 	<link rel="stylesheet" href="css/style.css">
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-
-	<script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo-20gBajHajJLF_YWUzPe8Sow0Ubqaj8&sensor=false">
-    </script>
-    <script type="text/javascript">
-    	var locations = [["CMU Alumni Networking", "40.45", "-79.8", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/alumni_networking.png"],["Music Show", "40.44", "-80", "Carnegie Music Hall", "eventdetail.html", "img/event_small/music_show.png"],["Entrepreneur Workshop", "40.436", "-79.88", "University of Pittsburgh", "eventdetail.html", "img/event_small/entrepreneur_workshop.png"], ["CMU Summit", "40.46", "-79.9", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/cmu_summit.png"], ["Pittsburgh Mobile Conference", "40.455", "-79.95", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/pittsburgh_mobile.png"], ["Facebook Hackathon", "40.44", "-79.85", "GHC 4301", "eventdetail.html", "img/event_small/facebook_hackathon.png"], ["Lecture on Social Network", "40.42", "-79.9", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/social_network.png"], ["Google Tech Talk", "40.43", "-79.96", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/google_techtalk.png"]];
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo-20gBajHajJLF_YWUzPe8Sow0Ubqaj8&sensor=false"></script> -->
+  <script type="text/javascript">
+		var locations = [["CMU Alumni Networking", "40.45", "-79.8", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/alumni_networking.png"],["Music Show", "40.44", "-80", "Carnegie Music Hall", "eventdetail.html", "img/event_small/music_show.png"],["Entrepreneur Workshop", "40.436", "-79.88", "University of Pittsburgh", "eventdetail.html", "img/event_small/entrepreneur_workshop.png"], ["CMU Summit", "40.46", "-79.9", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/cmu_summit.png"], ["Pittsburgh Mobile Conference", "40.455", "-79.95", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/pittsburgh_mobile.png"], ["Facebook Hackathon", "40.44", "-79.85", "GHC 4301", "eventdetail.html", "img/event_small/facebook_hackathon.png"], ["Lecture on Social Network", "40.42", "-79.9", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/social_network.png"], ["Google Tech Talk", "40.43", "-79.96", "UC Mcconomy Hall", "eventdetail.html", "img/event_small/google_techtalk.png"]];
 
 		var contentStrings = [];
 
 		var cur_latitude = -34.397;
 		var cur_longitude = 150.644;
 
-      	function initialize() {
-      		detectBrowser();
-
-		// Check for geolocation support
-		if (navigator.geolocation) {
-			// Use method getCurrentPosition to get coordinates
-			navigator.geolocation
-					.getCurrentPosition(function show_map(position) {
-							cur_latitude = position.coords.latitude;
-							cur_longitude = position.coords.longitude;
-
-						// let's show a map or do something interesting!
-						map.setCenter(new google.maps.LatLng(cur_latitude,
-							cur_longitude));
-
-						// var marker = new google.maps.Marker({
-						// position : new google.maps.LatLng(cur_latitude,
-						// cur_longitude),
-						// map : map
-						// });
-
+		$(function() {
+			$('#map_canvas').gmap().bind('init', function() {
+				$.each(locations, function(i, marker) {
+					$('#map_canvas').gmap('addMarker', {
+						'position': new google.maps.LatLng(marker[1], marker[2]),
+						'bounds': true
+					}).click(function() {
+						var contentString = '<div style="width: 320px; height: 120px;"><img src="' + marker[5] + '" /><div style="text-align: left;float: right;"><a href="' + marker[4] + '"><h4 class="text-left">' + marker[0]
+							+ '</h4></a><p class="text-left">' + marker[3]
+							+ '</p></div></div>';
+						$('#map_canvas').gmap('openInfoWindow', { 'content': contentString }, this);
+					});
+				});
 			});
-		}
+			$('#map_canvas').style.width = '100%';
+			$('#map_canvas').style.height = '100%';
+		});
 
-        var mapOptions = {
-          center: new google.maps.LatLng(cur_latitude, cur_longitude),
-          zoom: 12,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
+  	// function initialize() {
+  		// detectBrowser();
 
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
+			// // Check for geolocation support
+			// if (navigator.geolocation) {
+			// 	// Use method getCurrentPosition to get coordinates
+			// 	navigator.geolocation.getCurrentPosition(function show_map(position) {
+			// 		cur_latitude = position.coords.latitude;
+			// 		cur_longitude = position.coords.longitude;
 
+			// 		// let's show a map or do something interesting!
+			// 		map.setCenter(new google.maps.LatLng(cur_latitude, cur_longitude));
 
-		var infowindow = new google.maps.InfoWindow();
+			// 		// var marker = new google.maps.Marker({
+			// 		// position : new google.maps.LatLng(cur_latitude,
+			// 		// cur_longitude),
+			// 		// map : map
+			// 		// });
+			// 	});
+			// }
 
-		var i;
+   //    var mapOptions = {
+   //      center: new google.maps.LatLng(cur_latitude, cur_longitude),
+   //      zoom: 12,
+   //      mapTypeId: google.maps.MapTypeId.ROADMAP
+   //    };
+   //    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+			// var infowindow = new google.maps.InfoWindow();
 
-		for (i = 0; i < locations.length; i++) {
-			var marker = new google.maps.Marker({
-				position : new google.maps.LatLng(locations[i][1],
-						locations[i][2]),
-				map : map
-			});
+			// for (var i = 0; i < locations.length; i++) {
+			// 	var marker = new google.maps.Marker({
+			// 		position : new google.maps.LatLng(locations[i][1],
+			// 		locations[i][2]),
+			// 		map : map
+			// 	});
+			// 	var contentString = '<div style="width: 320px; height: 120px;"><img src="' + locations[i][5] + '" /><div style="text-align: left;float: right;"><a href="' + locations[i][4] + '"><h4 class="text-left">' + locations[i][0]
+			// 	+ '</h4></a><p class="text-left">' + locations[i][3]
+			// 	+ '</p></div></div>';
 
+			// 	contentStrings[i] = contentString;
 
-			var contentString = '<div style="width: 320px; height: 120px;"><img src="' + locations[i][5] + '" /><div style="text-align: left;float: right;"><a href="' + locations[i][4] + '"><h4 class="text-left">' + locations[i][0]
-			+ '</h4></a><p class="text-left">' + locations[i][3]
-			+ '</p></div></div>';
+			// 	google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			// 		return function() {
+			// 			//console.log(contentStrings[i]);
+			// 			infowindow.setContent(contentStrings[i]);
+			// 			infowindow.open(map, marker);
+			// 		};
+			// 	})(marker, i));
+			// }
+    // }
 
-			contentStrings[i] = contentString;
+    // function detectBrowser(){
+		  // var useragent = navigator.userAgent;
+		  // var mapdiv = document.getElementById("map_canvas");
 
-			google.maps.event.addListener(marker, 'click',
-					(function(marker, i) {
-						return function() {
-							//console.log(contentStrings[i]);
-							infowindow.setContent(contentStrings[i]);
-							infowindow.open(map, marker);
-						};
-					})(marker, i));
-		}
-      }
-
-      function detectBrowser(){
-		  var useragent = navigator.userAgent;
-		  var mapdiv = document.getElementById("map_canvas");
-
-		  if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
-		    mapdiv.style.width = '100%';
-		   	mapdiv.style.height = '100%';
-		  } else {
-		    mapdiv.style.width = '100%';
-		    mapdiv.style.height = '500px';
-		  }
-      }
-    </script>
+		  // if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+		  //   mapdiv.style.width = '100%';
+		  //  	mapdiv.style.height = '100%';
+		  // } else {
+		  //   mapdiv.style.width = '100%';
+		  //   mapdiv.style.height = '500px';
+		  // }
+    // }
+  </script>
 
 </head>
-<body onload="initialize()">
+<!-- <body onload="initialize()"> -->
+<body>
 
 <div data-role="page">
 	<div data-role="header">
@@ -117,7 +125,7 @@
 			<li><a href="mylist.html">My Events</a></li>
 			<li><a href="settings.html">Settings</a></li>
 		</ul>
-		</div><!-- /navbar -->
+		</div>
 	</div>
 </div>
 
